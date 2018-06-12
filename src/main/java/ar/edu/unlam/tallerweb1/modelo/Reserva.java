@@ -20,6 +20,9 @@ public class Reserva {
 	@ManyToOne
 	private Usuario usuario;
 	
+	@ManyToOne
+	private Establecimiento establecimiento;
+		
 	public Long getId() {
 		return id;
 	}
