@@ -46,6 +46,22 @@ public class Calificacion {
 		this.comentario = comentario;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Establecimiento getEstablecimiento() {
+		return establecimiento;
+	}
+
+	public void setEstablecimiento(Establecimiento establecimiento) {
+		this.establecimiento = establecimiento;
+	}
+
 	@Override
 	public String toString() {
 		return "Calificacion [id=" + id + ", puntaje=" + puntaje + ", comentario=" + comentario + "]";

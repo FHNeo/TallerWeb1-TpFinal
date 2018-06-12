@@ -47,6 +47,22 @@ public class Reserva {
 		this.monto = monto;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Establecimiento getEstablecimiento() {
+		return establecimiento;
+	}
+
+	public void setEstablecimiento(Establecimiento establecimiento) {
+		this.establecimiento = establecimiento;
+	}
+
 	@Override
 	public String toString() {
 		return "Reserva [id=" + id + ", fecha=" + fecha + ", monto=" + monto + "]";
