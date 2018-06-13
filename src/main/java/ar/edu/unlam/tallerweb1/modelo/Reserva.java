@@ -12,14 +12,11 @@ public class Reserva {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	private Date fecha;
-	
 	private Float monto;
 
 	@ManyToOne
 	private Usuario usuario;
-	
 	@ManyToOne
 	private Establecimiento establecimiento;
 		
@@ -45,6 +42,22 @@ public class Reserva {
 
 	public void setMonto(Float monto) {
 		this.monto = monto;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Establecimiento getEstablecimiento() {
+		return establecimiento;
+	}
+
+	public void setEstablecimiento(Establecimiento establecimiento) {
+		this.establecimiento = establecimiento;
 	}
 
 	@Override
