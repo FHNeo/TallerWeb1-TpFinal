@@ -12,14 +12,11 @@ public class Reserva {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	private Date fecha;
-	
 	private Float monto;
 
 	@ManyToOne
 	private Usuario usuario;
-	
 	@ManyToOne
 	private Establecimiento establecimiento;
 		
