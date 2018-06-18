@@ -1,39 +1,58 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+
 @Entity
 public class Reserva {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idReserva;
 	private Date fechaIn;
 	private Date fechaOut;
 	private int CantPersona;
 	private boolean tipo;
-
-	@ManyToOne
-	private Usuario usuario;
+	/*Se declara el tipo de relacion y se hace el join de las dos tablas, aclarando
+	  cuales seran las fk que tendra la tabla intermedia y como se llamara*/
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "reserva_sala", catalog = "db", joinColumns = {
+			@JoinColumn(name = "idReserva", nullable = false, updatable = false) },
+			inverseJoinColumns = { @JoinColumn(name = "idSala", nullable = false, 
+			updatable = false)})
+	private Set<Sala> salas = new HashSet<Sala>();
 	
-	//@ManyToMany
-	//RELACION CON SALA
 	
-	//@ManyToMany
-	//RELACION CON RECURSO
+	/*Lo mismo que arriba pero para la tabla recursos*/
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "reserva_recurso", catalog = "db", joinColumns = {
+			@JoinColumn(name = "idReserva", nullable = false, updatable = false) },
+			inverseJoinColumns = { @JoinColumn(name = "idRecurso", nullable = false, 
+			updatable = false)})
+	private Set<Recurso> recursos = new HashSet<Recurso>();
 
-	public Long getId() {
-		return id;
+	
+	public Reserva() {
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+	public Long getIdReserva() {
+		return idReserva;
 	}
+
+	public void setIdReserva(Long idReserva) {
+		this.idReserva = idReserva;
+	}
+	
 	public Date getFechaIn() {
 		return fechaIn;
 	}
@@ -69,12 +88,32 @@ public class Reserva {
 	}
 	@Override
 	public String toString() {
-		return "Reserva [id=" + id + ", fechaIn=" + fechaIn + ", fechaOut=" + fechaOut + ", CantPersona=" + CantPersona
+		return "Reserva [id=" + idReserva + ", fechaIn=" + fechaIn + ", fechaOut=" + fechaOut + ", CantPersona=" + CantPersona
 				+ ", tipo=" + tipo + ", usuario=" + usuario + "]";
 	}
-
 	
+	// **** RELACIONES **** //
 	
+	@ManyToOne
+	private Usuario usuario;
 	
+	// RELACION N A N CON SALA
 	
+	public Set<Sala> getSalas(){
+		return this.salas;
+	}
+	
+	public void setSalas(Set<Sala> salas) {
+		this.salas = salas;
+	}
+	
+	//RELACION N A N CON RECURSO
+	
+	public Set<Recurso> getRecursos(){
+		return this.recursos;
+	}
+	
+	public void setRecursos(Set<Recurso> recursos) {
+		this.recursos = recursos;
+	}
 }
