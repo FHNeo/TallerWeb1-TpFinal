@@ -31,9 +31,5 @@ public class ReservaControlador {
 		modelo.put("reserva", reserva);
 		return new ModelAndView ("reserva",modelo);
 	}
-	
-
-
-
 
 }
