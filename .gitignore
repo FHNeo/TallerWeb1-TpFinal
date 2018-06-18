@@ -17,8 +17,7 @@ Thumbs.db
 # GIT
 .git/
 #Hibernate
-#src/main/resources/hibernateContext.xml
-# Java
+#src/main/resources/hibernateContext.xml  #Java
 *.class
 # packages 
 *.jar
