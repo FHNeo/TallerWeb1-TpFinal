@@ -41,7 +41,7 @@ public class Reserva {
 			updatable = false)})
 	private Set<Recurso> recursos = new HashSet<Recurso>();
 
-	
+	*Elemento de prueba 1, culpa de hiroma*
 	public Reserva() {
 	}
 
