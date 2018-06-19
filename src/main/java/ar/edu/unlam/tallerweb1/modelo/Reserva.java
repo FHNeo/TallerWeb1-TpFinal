@@ -32,8 +32,7 @@ public class Reserva {
 			updatable = false)})
 	private Set<Sala> salas = new HashSet<Sala>();
 	
-	
-	/*Lo mismo que arriba pero para la tabla recursos*/
+
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "reserva_recurso", catalog = "db", joinColumns = {
 			@JoinColumn(name = "idReserva", nullable = false, updatable = false) },
