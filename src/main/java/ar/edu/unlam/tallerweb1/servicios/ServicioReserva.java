@@ -6,4 +6,5 @@ import ar.edu.unlam.tallerweb1.modelo.Reserva;
 
 public interface ServicioReserva {
 	List<Reserva> traerLasReservasExistentes();
+	void registrarReserva(Reserva reserva);
 }

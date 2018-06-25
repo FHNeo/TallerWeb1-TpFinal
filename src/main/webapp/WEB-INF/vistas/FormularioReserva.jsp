@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,31 +10,20 @@
 </head>
 <body>
 
-<form action="/my-handling-form-page" method="post">
+<form action="registrarReserva" method="post" modelAttribute="reserva" name="formularioR" class="input-group">
     <div>
         <label for="CantPersona">Cantidad de Personas</label><br>
-        <input type="number" name="CantPersona" placeholder="escriba aqui" min="0" max="100">
+        <input type="number" path="CantPersona" name="CantPersona" placeholder="escriba aqui" required="required" min="0" max="100">
     </div>
 	<br>
     <div>	
 		<label for="fechaIn">Fecha de Inicio</label><br>
-		<input type="date" name="fechaIn" >
+		<input type="date" path="fechaIn" name="fechaIn" required="required" >
 	</div>
 	<br>
     <div>	
 		<label for="fechaOut">Fecha final</label><br>
-		<input type="date" name="fechaOut" >
-	</div>
-	<br>
-    <div>	
-		<label for="tipo">Tipo de sala</label><br>
-		<input type="radio" name="tipo" value="privada" checked>Privada<br>
-		<input type="radio" name="tipó" value="compartida">Compartida<br>
-	</div>
-	<br>
-    <div>	
-		<label for="tipo">Ubicacion</label>
-    </div>
+		<input type="date" path="fechaOut" name="fechaOut" required="required" >
 	<br>
     <div class="button">
         <button type="submit">Reservar</button>

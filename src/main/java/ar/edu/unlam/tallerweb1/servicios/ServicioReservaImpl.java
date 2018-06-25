@@ -12,10 +12,16 @@ import ar.edu.unlam.tallerweb1.modelo.Reserva;
 @Service
 public class ServicioReservaImpl implements ServicioReserva{
 		@Inject
-		private ReservaDao servicioDeApuesta;
+		private ReservaDao ReservaDAO;
 		
 		@Override
 		public List<Reserva> traerLasReservasExistentes(){
-			return servicioDeApuesta.traerReserva();
+			return ReservaDAO.traerTodasLasReservas();
 		}
+
+		@Override
+		public void registrarReserva(Reserva reserva) {
+			ReservaDAO.guardar(reserva);
+		}
+		
 }
