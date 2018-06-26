@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 @Entity
 public class Recurso {
 
@@ -25,7 +24,7 @@ public class Recurso {
 		return idRecurso;
 	}
 
-	public void setId(Long id) {
+	public void setId(Long idRecurso) {
 		this.idRecurso = idRecurso;
 	}
 

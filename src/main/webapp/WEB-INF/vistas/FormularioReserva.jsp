@@ -24,6 +24,17 @@
     <div>	
 		<label for="fechaOut">Fecha final</label><br>
 		<input type="date" path="fechaOut" name="fechaOut" required="required" >
+	</div>
+	<br>
+    <div>	
+		<label for="tipo">Tipo de sala</label><br>
+		<input type="radio" path="tipo" name="tipo" value="true" checked>Privada<br>
+		<input type="radio" path="tipo" name="tipo" value="false">Compartida<br>
+	</div>
+	<br>
+    <div>	
+		<label for="tipo">Ubicacion</label>
+    </div>
 	<br>
     <div class="button">
         <button type="submit">Reservar</button>

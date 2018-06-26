@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div class = "container">
-			<h1><c:forEach items="${reserva}" var="e"><h2>${e.fechaIn} "hasta" ${e.fechaOut}</h2></c:forEach></h1>
+			<h1><c:forEach items="${reserva}" var="e"><h2>${e.fechaIn} hasta ${e.fechaOut} y ${e.tipo }</h2></c:forEach></h1>
 		</div>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
