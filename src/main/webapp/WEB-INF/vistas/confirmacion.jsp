@@ -9,6 +9,7 @@
 <body>
 <div class = "container">
 			<h1>${aviso }</h1>
+			<a href="listaDeReservas"> Ver Reservas</a>
 		</div>
 </body>
 </html>

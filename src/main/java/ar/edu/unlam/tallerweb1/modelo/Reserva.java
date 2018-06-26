@@ -21,8 +21,9 @@ public class Reserva {
 	private Long idReserva;
 	private Date fechaIn;
 	private Date fechaOut;
-	private int CantPersona;
+	private Long CantPersona;
 	private boolean tipo;
+	
 	/*Se declara el tipo de relacion y se hace el join de las dos tablas, aclarando
 	  cuales seran las fk que tendra la tabla intermedia y como se llamara*/
 	@ManyToMany(cascade = CascadeType.ALL)
@@ -72,11 +73,11 @@ public class Reserva {
 		this.usuario = usuario;
 	}
 	
-	public int getCantPersona() {
+	public Long getCantPersona() {
 		return CantPersona;
 	}
-	public void setCantPersona(int cantPersona) {
-		CantPersona = cantPersona;
+	public void setCantPersona(Long cantPersona) {
+		this.CantPersona = cantPersona;
 	}
 	public boolean isTipo() {
 		return tipo;
@@ -88,6 +89,16 @@ public class Reserva {
 	public String toString() {
 		return "Reserva [id=" + idReserva + ", fechaIn=" + fechaIn + ", fechaOut=" + fechaOut + ", CantPersona=" + CantPersona
 				+ ", tipo=" + tipo + ", usuario=" + usuario + "]";
+	}
+	
+	// Humanize de Tipo//
+	//Esto lo pongo para que no de True o False, si no algo leible
+	public String HumanizeTipo() {
+		String tipoHumanizado = "Privada";
+		if (this.tipo = false)
+			tipoHumanizado = "Compartida";
+		return tipoHumanizado;
+		
 	}
 	
 	// **** RELACIONES **** //

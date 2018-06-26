@@ -14,6 +14,10 @@ Thumbs.db
 # thumbnails
 ._*
 
+#Pom y cosas# 
+*.xml
+*.MF
+
 # GIT
 .git/
 #Hibernate

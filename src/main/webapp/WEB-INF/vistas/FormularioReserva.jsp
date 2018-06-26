@@ -13,7 +13,7 @@
 <form action="registrarReserva" method="post" modelAttribute="reserva" name="formularioR" class="input-group">
     <div>
         <label for="CantPersona">Cantidad de Personas</label><br>
-        <input type="number" path="CantPersona" name="CantPersona" placeholder="escriba aqui" required="required" min="0" max="100">
+        <input type=text path="CantPersona" name="CantPersona" placeholder="escriba aqui" required="required" min="0" max="100">
     </div>
 	<br>
     <div>	
@@ -23,7 +23,7 @@
 	<br>
     <div>	
 		<label for="fechaOut">Fecha final</label><br>
-		<input type="date" path="fechaOut" name="fechaOut" required="required" >
+		<input type="date" path="fechaOut" name="fechaOut" required="true" >
 	</div>
 	<br>
     <div>	
@@ -36,7 +36,6 @@
 		<label for="tipo">Ubicacion</label>
     </div>
 	<br>
-	</div>
     <div class="button">
         <button type="submit">Reservar</button>
     </div>
