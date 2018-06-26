@@ -25,7 +25,7 @@ public class Recurso {
 		return idRecurso;
 	}
 
-	public void setId(Long id) {
+	public void setId(Long id, Long idRecurso) {
 		this.idRecurso = idRecurso;
 	}
 

@@ -25,6 +25,7 @@
 		<label for="fechaOut">Fecha final</label><br>
 		<input type="date" path="fechaOut" name="fechaOut" required="required" >
 	<br>
+	</div>
     <div class="button">
         <button type="submit">Reservar</button>
     </div>
