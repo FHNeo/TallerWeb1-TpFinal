@@ -21,7 +21,7 @@ public class Reserva {
 	private Long idReserva;
 	private Date fechaIn;
 	private Date fechaOut;
-	private Long CantPersona;
+	private Long cantPersona;
 	private boolean tipo;
 	
 	/*Se declara el tipo de relacion y se hace el join de las dos tablas, aclarando
@@ -74,10 +74,10 @@ public class Reserva {
 	}
 	
 	public Long getCantPersona() {
-		return CantPersona;
+		return cantPersona;
 	}
-	public void setCantPersona(Long cantPersona) {
-		this.CantPersona = cantPersona;
+	public void setcantPersona(Long cantPersona) {
+		this.cantPersona = cantPersona;
 	}
 	public boolean isTipo() {
 		return tipo;
@@ -87,7 +87,7 @@ public class Reserva {
 	}
 	@Override
 	public String toString() {
-		return "Reserva [id=" + idReserva + ", fechaIn=" + fechaIn + ", fechaOut=" + fechaOut + ", CantPersona=" + CantPersona
+		return "Reserva [id=" + idReserva + ", fechaIn=" + fechaIn + ", fechaOut=" + fechaOut + ", CantPersona=" + cantPersona
 				+ ", tipo=" + tipo + ", usuario=" + usuario + "]";
 	}
 	
@@ -95,9 +95,8 @@ public class Reserva {
 	//Esto lo pongo para que no de True o False, si no algo leible
 	public String HumanizeTipo() {
 		String tipoHumanizado = "Privada";
-		if (this.tipo = false){
+		if (this.tipo == false)
 			tipoHumanizado = "Compartida";
-			}
 		return tipoHumanizado;
 		
 	}

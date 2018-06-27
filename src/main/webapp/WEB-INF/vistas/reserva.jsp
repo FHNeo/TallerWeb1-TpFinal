@@ -10,16 +10,16 @@
 </head>
 <body>
 	<div class="container">
-		<h1>
 			<c:forEach items="${reserva}" var="e">
-				<h2>Su reserva fue realizada con Exito!</h2>
-				<h3>Usuario: ${e.usuario}</h3>
-				<h3>Desde: ${e.fechaIn}</h3>
-				<h3>Hasta: ${e.fechaOut}</h3>
-				<h3>tipo ${e.HumanizeTipo()}</h3>
-				<h3></h3>
+				<h3>Su fue realizada con Exito!</h3>
+				<h4>Usuario: ${e.usuario}</h4>
+				<h4>Desde: ${e.fechaIn}</h4>
+				<h4>Hasta: ${e.fechaOut}</h4>
+				<h4>Tipo: ${e.HumanizeTipo()}</h4>
+				<h4>Cantidad de personas: ${e.cantPersona}</h4>
+				<hr>
 			</c:forEach>
-		</h1>
+		
 	</div>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script
