@@ -95,8 +95,9 @@ public class Reserva {
 	//Esto lo pongo para que no de True o False, si no algo leible
 	public String HumanizeTipo() {
 		String tipoHumanizado = "Privada";
-		if (this.tipo = false)
+		if (this.tipo = false){
 			tipoHumanizado = "Compartida";
+			}
 		return tipoHumanizado;
 		
 	}

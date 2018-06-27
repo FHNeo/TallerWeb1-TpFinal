@@ -5,13 +5,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 
 // implelemtacion del DAO de usuarios, la anotacion @Repository indica a Spring que esta clase es un componente que debe
 // ser manejado por el framework, debe indicarse en applicationContext que busque en el paquete ar.edu.unlam.tallerweb1.dao
 // para encontrar esta clase.
-@Repository("usuarioDao")
+@Service("usuarioDao")
 public class UsuarioDaoImpl implements UsuarioDao {
 
 	// Como todo dao maneja acciones de persistencia, normalmente estará inyectado el session factory de hibernate
@@ -32,4 +33,9 @@ public class UsuarioDaoImpl implements UsuarioDao {
 				.uniqueResult();
 	}
 
+	@Override
+	public Usuario buscarId(Long id) {
+		return sessionFactory.getCurrentSession().get(Usuario.class, id);
+	}
+	
 }
